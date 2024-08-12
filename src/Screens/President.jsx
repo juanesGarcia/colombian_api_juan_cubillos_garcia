@@ -1,0 +1,81 @@
+import React, { useEffect, useState } from 'react'
+import { GetPresident } from '../Api/Calls';
+import '../Style/President.css'
+
+const President = () => {
+    const [presidents, setPresidents] = useState([]);
+    const [partyStats, setPartyStats] = useState([]);
+    const [time, setTime] = useState([])
+
+    const GetPresidents = async () => {
+        try {
+            const startTime = performance.now(); 
+        const response = await GetPresident();
+        const presidents = response.data;
+
+        const endTime = performance.now();
+        const duration = endTime - startTime;
+        console.log(`API call duration: ${duration.toFixed(2)} ms`);
+        setPresidents(presidents.length);
+        setTime(duration.toFixed(2))
+
+            // Agrupar por partido político y contar
+            const partyCounts = presidents.reduce((acc, president) => {
+                const party = president.politicalParty.toLowerCase();
+                if (acc[party]) {
+                    acc[party].count += 1;
+                    acc[party].presidents.push(president);
+                } else {
+                    acc[party] = {
+                        count: 1,
+                        presidents: [president]
+                    };
+                }
+                return acc;
+            }, {});
+
+            // Convertir el objeto en un array y ordenar por el número de presidentes
+            const sortedPartyStats = Object.entries(partyCounts)
+                .map(([party, data]) => ({ party, ...data }))
+                .sort((a, b) => b.count - a.count);
+
+            setPartyStats(sortedPartyStats);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        GetPresidents();
+    }, []);
+
+    return (
+        <div> 
+            <h3 className='registros'>cantidad de resgistros: {presidents}</h3>
+            <div className='containerTabla'>
+            <table  >
+                <thead>
+                    <tr>
+                        <th>Partido Político</th>
+                        <th>Conteo de Presidentes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {partyStats.map(({ party, count }) => (
+                        <tr key={party}>
+                            <td>{party}</td>
+                            <td>{count}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+           
+        </div>
+        <h3 className='registros'>tiempo de respuesta de la Api: {time}</h3> 
+        </div>
+        
+    );
+}
+
+export default President;
