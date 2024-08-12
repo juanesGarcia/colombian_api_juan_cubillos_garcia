@@ -23,7 +23,7 @@ Además, se muestra el tiempo de respuesta de la solicitud a la API, lo que prop
 
 La entidad Airport se organiza en tres componentes clave:
 
-#### Componente 1: Agrupamiento por Departamento y Ciudad
+- **Componente 1**: Agrupamiento por Departamento y Ciudad
 
 Este componente muestra una tabla que agrupa los aeropuertos por departamento y ciudad, con un conteo de los aeropuertos en cada grupo. Se compara el conteo total de aeropuertos agrupados con el número de registros obtenidos desde la API para validar la integridad de los datos.
 
@@ -35,7 +35,7 @@ La lógica de validación se implementa como sigue:
 
 Si los números coinciden, los datos se consideran consistentes; de lo contrario, se notifica la falta de registros. También se muestra el tiempo de respuesta de la API, y se presenta una tabla con la cantidad de aeropuertos por departamento y ciudad, permitiendo un análisis detallado de su distribución.
 
-#### Componente 2: Agrupamiento por Región, Departamento, Ciudad y Tipo
+- **Componente 2**: Agrupamiento por Región, Departamento, Ciudad y Tipo
 
 Este componente realiza un agrupamiento adicional de los aeropuertos, añadiendo la dimensión "Tipo". Se valida de manera similar a la anterior, comparando el conteo de aeropuertos por grupo con el total de registros de la API:
 
@@ -46,7 +46,7 @@ Este componente realiza un agrupamiento adicional de los aeropuertos, añadiendo
 
 Si los datos son consistentes, se procede a mostrar el tiempo de respuesta de la API y una tabla detallada que ilustra la distribución de los aeropuertos según región, departamento, ciudad y tipo.
 
-#### Componente 3: Estructura de Datos de Salida
+- **Componente 3**: Estructura de Datos de Salida
 
 Este componente genera una estructura de datos de salida con un formato predeterminado, adecuada para exportaciones o integraciones.
 
