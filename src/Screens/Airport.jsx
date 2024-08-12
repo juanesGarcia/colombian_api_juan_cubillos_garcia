@@ -7,7 +7,6 @@ const Airport = () => {
   const [time, setTime] = useState([]);
   const [airportCount, setAirportCount] = useState([]);
 
-  // Función para obtener el nombre del departamento usando el ID
   const fetchDepartmentName = async (id) => {
     try {
       const response = await getDepartments(id);
@@ -31,7 +30,6 @@ const Airport = () => {
       setAirportCount(airports.length);
       console.log(airports);
 
-      // Agrupar por ciudad y contar
       const cityCounts = {};
 
       for (const airport of airports) {
@@ -45,14 +43,12 @@ const Airport = () => {
         cityCounts[city].count += 1;
       }
 
-      // Obtener nombres de departamentos y combinar con conteos de ciudad
       const results = [];
       for (const [city, data] of Object.entries(cityCounts)) {
         const departmentName = await fetchDepartmentName(data.departmentId);
         results.push({ department: departmentName, city, count: data.count });
       }
 
-      // Ordenar los resultados por conteo descendente
       const sortedCityStats = results.sort((a, b) => b.count - a.count);
 
       setAirportStats(sortedCityStats);
