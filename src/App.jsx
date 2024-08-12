@@ -3,6 +3,7 @@ import Airport from './Screens/Airport'
 import President from './Screens/President'
 import TouristicAttraction from './Screens/TouristicAttraction'
 import './Style/App.css'
+
 function App() {
 
 
@@ -24,7 +25,7 @@ function App() {
     </label>
     <input type="radio" name="option" id="3" />
     <label htmlFor="3">
-      <div className="tab-name">TouristicAttraction</div>
+      <div className="tab-name">TouristicAttrac</div>
       <div className="tab-content">
       <TouristicAttraction></TouristicAttraction>
       </div>

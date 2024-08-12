@@ -154,21 +154,21 @@ const AirportRegion = () => {
         <table>
           <thead>
             <tr>
-              <th>Región</th>
-              <th>Departamento</th>
-              <th>Ciudad</th>
-              <th>Tipo de Aeropuerto</th>
-              <th>Conteo de Aeropuertos</th>
+              <th className="th">Región</th>
+              <th className="th">Departamento</th>
+              <th className="th">Ciudad</th>
+              <th className="th">Tipo de Aeropuerto</th>
+              <th className="th">Conteo de Aeropuertos</th>
             </tr>
           </thead>
           <tbody>
             {airportStats.map(({ region, department, city, type, count }) => (
               <tr key={`${region}-${department}-${city}-${type}`}>
-                <td>{region}</td>
-                <td>{department}</td>
-                <td>{city}</td>
-                <td>{type}</td>
-                <td>{count}</td>
+                <td className="td">{region}</td>
+                <td className="td">{department}</td>
+                <td className="td">{city}</td>
+                <td className="td">{type}</td>
+                <td className="td">{count}</td>
               </tr>
             ))}
           </tbody>
