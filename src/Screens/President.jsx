@@ -48,13 +48,16 @@ const President = () => {
   }, []);
 
   return (
-    <div>
-        <div>
-        <h3 className="registro">Cantidad de registros: {partyStats.reduce((acc, curr) => acc + curr.count, 0) == presidents ? presidents:'faltan registros'}</h3>
-            <h3 className="registros">tiempo de respuesta de la Api: {time}</h3>
-        </div>
-      
+    <div className="cont-president">
+      <div>
+
+         <h3 className="registro">Cantidad de registros: {partyStats.reduce((acc, curr) => acc + curr.count, 0) == presidents ? presidents:'faltan registros'}</h3>
+      <h3 className="registro">tiempo de respuesta de la Api: {time}</h3>
+      </div>
+        
       <div className="containerTabla">
+        
+         
         <table>
           <thead>
             <tr>

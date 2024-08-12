@@ -1,0 +1,17 @@
+.cont-air{
+    display: flex;
+}
+.c{
+    display: block;
+}
+.cont-air-region{
+    display: flex;
+}
+@media (max-width: 800px) {
+    .cont-air{
+        display: block;
+    }
+    .cont-air-region{
+        display: block;
+    }
+}

@@ -25,3 +25,9 @@ export async function getAirport(){
         `${api}/Airport`
     );
 }
+
+export async function getRegion(id){
+    return await axios.get(
+        `${api}/Region/${id}`
+    );
+}

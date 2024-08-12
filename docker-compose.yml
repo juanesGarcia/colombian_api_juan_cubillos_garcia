@@ -1,0 +1,14 @@
+
+
+services:
+  junior:
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - "3009:5173"
+    volumes:
+      - ./src:/usr/src/app/src
