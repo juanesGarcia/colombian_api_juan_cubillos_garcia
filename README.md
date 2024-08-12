@@ -9,15 +9,15 @@ El proyecto se organiza en torno a tres entidades principales, cada una accesibl
 - **Atracciones Turísticas**: (TouristicAttraction)
 
 ### Entidad President
-La sección correspondiente a la entidad President muestra el número total de registros de presidentes almacenados en el sistema. Para garantizar la integridad de los datos, se realiza un conteo de presidentes agrupados por partido político, comparando este conteo con el número total de registros recibidos desde la API. Esta validación asegura que no se han perdido datos durante el proceso de obtención.
+La sección correspondiente a la entidad President muestra el número de registros de presidentes almacenados en el sistema, se realiza un conteo de presidentes agrupados por partido político, comparando este conteo con el número total de registros recibidos desde la API con el fin garantizar la integridad de los datos, Esta validación asegura que no se han perdido datos durante el proceso de obtención.
 
 La lógica que implementa esta validación se ejemplifica en el siguiente fragmento de código:
 
 {partyStats.reduce((acc, curr) => acc + curr.count, 0) === presidents ? presidents : 'Faltan registros'}
 
-Si el número de presidentes agrupados por partido coincide con el total de registros recibidos desde la API, los datos se consideran consistentes. En caso contrario, se notifica la falta de registros.
+Si el número de presidentes agrupados por partido político coincide con el total de registros recibidos desde la API, los datos se consideran consistentes. En caso contrario, se notifica la falta de registros.
 
-Además, se muestra el tiempo de respuesta de la solicitud a la API, lo que proporciona una métrica clave de rendimiento para la aplicación. Debajo de esta información, se despliega una tabla que detalla la cantidad de presidentes por partido político, facilitando un análisis más detallado de su distribución.
+Además, se muestra el tiempo de respuesta de la solicitud a la API, lo que proporciona una métrica clave de rendimiento de la aplicación. Debajo de esta información, se despliega una tabla que detalla la cantidad de presidentes por partido político, facilitando un análisis más detallado de su distribución.
 
 ### Entidad Airport
 
@@ -25,9 +25,10 @@ La entidad Airport se organiza en tres componentes clave:
 
 - **Componente 1**: Agrupamiento por Departamento y Ciudad
 
-Este componente muestra una tabla que agrupa los aeropuertos por departamento y ciudad, con un conteo de los aeropuertos en cada grupo. Se compara el conteo total de aeropuertos agrupados con el número de registros obtenidos desde la API para validar la integridad de los datos.
+Este componente muestra una tabla que agrupa los aeropuertos por departamento y ciudad, con un conteo de los aeropuertos por departamento y ciudad. Se compara el conteo total de aeropuertos agrupados con el número de registros obtenidos desde la API para validar la integridad de los datos.
 
 La lógica de validación se implementa como sigue:
+
  {airportStats.reduce((acc, curr) => acc + curr.count, 0) ===
         airportCount
           ? airportCount
@@ -37,23 +38,26 @@ Si los números coinciden, los datos se consideran consistentes; de lo contrario
 
 - **Componente 2**: Agrupamiento por Región, Departamento, Ciudad y Tipo
 
-Este componente realiza un agrupamiento adicional de los aeropuertos, añadiendo la dimensión "Tipo". Se valida de manera similar a la anterior, comparando el conteo de aeropuertos por grupo con el total de registros de la API:
+Este componente realiza un agrupamiento adicional de los aeropuertos, añadiendo la dimensión " Región" y "Tipo". Se valida de manera similar a la anterior, comparando el conteo de aeropuertos por grupo con el total de registros de la API:
 
  {airportStats.reduce((acc, curr) => acc + curr.count, 0) ===
         airportCount
           ? airportCount
           : "Faltan registros"}
 
-Si los datos son consistentes, se procede a mostrar el tiempo de respuesta de la API y una tabla detallada que ilustra la distribución de los aeropuertos según región, departamento, ciudad y tipo.
+Si los datos son consistentes se muestra la cantidad de registros.En caso contrario, se notifica la falta de registros.
+
+Se procede a mostrar el tiempo de respuesta de la API y una tabla detallada que ilustra la distribución de los aeropuertos según región, departamento, ciudad y tipo.
 
 - **Componente 3**: Estructura de Datos de Salida
 
 Este componente genera una estructura de datos de salida con un formato predeterminado, adecuada para exportaciones o integraciones.
 
 
-### Entidad touristattracion
+### Entidad TouristAttracion
 
 En la entidad TouristicAttraction, se agrupan las atracciones turísticas por departamento y ciudad, con un conteo correspondiente. Al igual que en las otras entidades, este conteo se compara con los datos recibidos desde la API para asegurar que no se hayan perdido registros:
+
          {touristStats.reduce((acc, curr) => acc + curr.count, 0) == tourist
             ? tourist
             : "faltan registros"}
@@ -67,8 +71,6 @@ En este proyecto se emplearon las siguientes tecnologías:
 - **JavaScript**: Utilizado junto con el framework React para el desarrollo de la interfaz de usuario.
 - **Css**: Se utilizó CSS puro para el estilo y diseño, sin el uso de frameworks o librerías CSS adicionales.
 - **Docker**: La aplicación fue dockerizada para facilitar su despliegue y portabilidad. Se creó un archivo Dockerfile para construir la imagen de la aplicación y un archivo docker-compose.yml para gestionar los servicios de manera sencilla. El uso de Docker en este proyecto permite asegurar la consistencia del entorno de ejecución, facilitando tanto el despliegue en diferentes plataformas como la colaboración entre desarrolladores.
-
-### Estructura de Carpetas
 
 ### Estructura de Carpetas
 
@@ -86,7 +88,7 @@ La estructura del proyecto se organiza en las siguientes carpetas clave:
 
 Existen varias formas de desplegar e inicializar esta aplicación:
 
-### Pasos para Despliegue e Inicialización
+### Despliegue con npm:
 
 - **Clonar el repositorio desde GitHub**: [https://github.com/juanesGarcia/colombian_api_juan_cubillos_garcia](https://github.com/juanesGarcia/colombian_api_juan_cubillos_garcia).
 - **Instalar las dependencias** ejecutando `npm install`.
@@ -95,11 +97,11 @@ Existen varias formas de desplegar e inicializar esta aplicación:
 ### Despliegue con Docker:
 
 - **Crear la imagen Docker** con el comando `docker build -t nombre_imagen .`.
-- **Ejecutar el contenedor** con `docker run -p 3000:3000 nombre_imagen`.
+- **Ejecutar el contenedor** con `docker run -p 3000:5173 nombre_imagen`.
 - **Alternativamente, para un despliegue más sencillo, se puede utilizar Docker Compose**:
   - **Iniciar la aplicación** con `docker-compose up`, que levantará todos los servicios definidos en el archivo `docker-compose.yml`.
 
-### Despliegue en la Nube:
+### Despliegue en la Web:
 
-- **La aplicación también ha sido desplegada en Vercel** y está disponible en la siguiente URL: [https://frontend-jr.vercel.app/](https://frontend-jr.vercel.app/).
+- **La aplicación también ha sido desplegada en Vercel** : está disponible en la siguiente URL: [https://frontend-jr.vercel.app/](https://frontend-jr.vercel.app/).
 
