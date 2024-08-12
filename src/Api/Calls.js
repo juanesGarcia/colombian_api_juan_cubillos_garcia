@@ -1,21 +1,27 @@
 import axios from "axios";
 
-
+const api= 'https://api-colombia.com/api/v1'
 
 export async function getPresident(){
     return await axios.get(
-        `https://api-colombia.com/api/v1/President`
+        `${api}/President`
     );
 }
 
 export async function getTourist(){
     return await axios.get(
-        `https://api-colombia.com/api/v1/TouristicAttraction`
+        `${api}//TouristicAttraction`
     );
 }
 
 export async function getDepartments(id){
     return await axios.get(
-        `https://api-colombia.com/api/v1/Department/${id}`
+        `${api}/Department/${id}`
     );                                            
 }  
+
+export async function getAirport(){
+    return await axios.get(
+        `${api}/Airport`
+    );
+}
