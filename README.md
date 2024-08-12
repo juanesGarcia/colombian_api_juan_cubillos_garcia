@@ -4,9 +4,9 @@
 ### Estructura del Proyecto
 El proyecto se organiza en torno a tres entidades principales, cada una accesible a través de una interfaz de usuario que permite visualizar su información al hacer clic en un ítem correspondiente:
 
-Presidentes (President)
-Aeropuertos (Airport)
-Atracciones Turísticas (TouristicAttraction)
+- **Presidentes**: (President)
+- **Aeropuertos**:Aeropuertos (Airport)
+- **Atracciones Turísticas**: (TouristicAttraction)
 
 ### Entidad President
 La sección correspondiente a la entidad President muestra el número total de registros de presidentes almacenados en el sistema. Para garantizar la integridad de los datos, se realiza un conteo de presidentes agrupados por partido político, comparando este conteo con el número total de registros recibidos desde la API. Esta validación asegura que no se han perdido datos durante el proceso de obtención.
