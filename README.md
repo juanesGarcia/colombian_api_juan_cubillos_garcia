@@ -86,19 +86,20 @@ La estructura del proyecto se organiza en las siguientes carpetas clave:
 
 Existen varias formas de desplegar e inicializar esta aplicación:
 
-#### Clonación y Ejecución Local:
+### Pasos para Despliegue e Inicialización
 
-#### Clonar el repositorio desde GitHub: https://github.com/juanesGarcia/colombian_api_juan_cubillos_garcia.
-#### Instalar las dependencias ejecutando npm install.
-#### Iniciar la aplicación en modo de desarrollo con el comando npm run dev.
+- **Clonar el repositorio desde GitHub**: [https://github.com/juanesGarcia/colombian_api_juan_cubillos_garcia](https://github.com/juanesGarcia/colombian_api_juan_cubillos_garcia).
+- **Instalar las dependencias** ejecutando `npm install`.
+- **Iniciar la aplicación en modo de desarrollo** con el comando `npm run dev`.
 
 ### Despliegue con Docker:
 
-#### Crear la imagen Docker con el comando docker build -t nombre_imagen ..
-#### Ejecutar el contenedor con docker run -p 3000:3000 nombre_imagen.
-#### Alternativamente, para un despliegue más sencillo, se puede utilizar Docker Compose:
-#### Iniciar la aplicación con docker-compose up, que levantará todos los servicios definidos en el archivo docker-compose.yml.
+- **Crear la imagen Docker** con el comando `docker build -t nombre_imagen .`.
+- **Ejecutar el contenedor** con `docker run -p 3000:3000 nombre_imagen`.
+- **Alternativamente, para un despliegue más sencillo, se puede utilizar Docker Compose**:
+  - **Iniciar la aplicación** con `docker-compose up`, que levantará todos los servicios definidos en el archivo `docker-compose.yml`.
 
 ### Despliegue en la Nube:
 
-#### La aplicación también ha sido desplegada en Vercel y está disponible en la siguiente URL: https://frontend-jr.vercel.app/.
+- **La aplicación también ha sido desplegada en Vercel** y está disponible en la siguiente URL: [https://frontend-jr.vercel.app/](https://frontend-jr.vercel.app/).
+
