@@ -64,20 +64,23 @@ Si los registros coinciden, se confirma la consistencia de los datos. Además, s
 
 En este proyecto se emplearon las siguientes tecnologías:
 
-#### JavaScript: Utilizado junto con el framework React para el desarrollo de la interfaz de usuario.
-#### CSS: Se utilizó CSS puro para el estilo y diseño, sin el uso de frameworks o librerías CSS adicionales.
-#### Docker: La aplicación fue dockerizada para facilitar su despliegue y portabilidad. Se creó un archivo Dockerfile para construir la imagen de la aplicación y un archivo docker-compose.yml para gestionar los servicios de manera sencilla. El uso de Docker en este proyecto permite asegurar la consistencia del entorno de ejecución, facilitando tanto el despliegue en diferentes plataformas como la colaboración entre desarrolladores.
+- **JavaScript**: Utilizado junto con el framework React para el desarrollo de la interfaz de usuario.
+- **Css**: Se utilizó CSS puro para el estilo y diseño, sin el uso de frameworks o librerías CSS adicionales.
+- **Docker**: La aplicación fue dockerizada para facilitar su despliegue y portabilidad. Se creó un archivo Dockerfile para construir la imagen de la aplicación y un archivo docker-compose.yml para gestionar los servicios de manera sencilla. El uso de Docker en este proyecto permite asegurar la consistencia del entorno de ejecución, facilitando tanto el despliegue en diferentes plataformas como la colaboración entre desarrolladores.
+
+### Estructura de Carpetas
 
 ### Estructura de Carpetas
 
 La estructura del proyecto se organiza en las siguientes carpetas clave:
 
-#### api/: Contiene todas las llamadas a la API, centralizadas en el archivo Calls.js.
-#### screens/: Contiene los componentes de React correspondientes a cada entidad del proyecto, con sus respectivos archivos .jsx.
-#### styles/: Contiene los archivos de estilo CSS aplicados a cada entidad, con extensión .css.
-#### Dockerfile: Archivo utilizado para la creación de la imagen Docker de la aplicación.
-#### docker-compose.yml: Archivo de configuración utilizado para desplegar la aplicación mediante Docker Compose.
-#### main.jsx: Archivo que maneja el enrutamiento de la aplicación. La aplicación se sirve en la ruta /colombia_dash, y cualquier acceso a la raíz redirige automáticamente a esta ruta para evitar confusiones. Si se intenta acceder a cualquier otra ruta no definida, se mostrará un mensaje de error.
+- **`api/`**: Contiene todas las llamadas a la API, centralizadas en el archivo `Calls.js`.
+- **`screens/`**: Contiene los componentes de React correspondientes a cada entidad del proyecto, con sus respectivos archivos `.jsx`.
+- **`styles/`**: Contiene los archivos de estilo CSS aplicados a cada entidad, con extensión `.css`.
+- **`Dockerfile`**: Archivo utilizado para la creación de la imagen Docker de la aplicación.
+- **`docker-compose.yml`**: Archivo de configuración utilizado para desplegar la aplicación mediante Docker Compose.
+- **`main.jsx`**: Archivo que maneja el enrutamiento de la aplicación. La aplicación se sirve en la ruta `/colombia_dash`, y cualquier acceso a la raíz redirige automáticamente a esta ruta para evitar confusiones. Si se intenta acceder a cualquier otra ruta no definida, se mostrará un mensaje de error.
+
 
 ### Despliegue e Inicialización
 
