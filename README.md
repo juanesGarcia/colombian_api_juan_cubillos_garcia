@@ -105,3 +105,8 @@ Existen varias formas de desplegar e inicializar esta aplicación:
 
 - **La aplicación también ha sido desplegada en Vercel** : está disponible en la siguiente URL: [https://frontend-jr.vercel.app/](https://frontend-jr.vercel.app/).
 
+
+### Nota:
+
+Aveces se demora en cargar un poco las tablas
+
