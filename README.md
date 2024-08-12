@@ -108,5 +108,4 @@ Existen varias formas de desplegar e inicializar esta aplicación:
 
 ### Nota:
 
-Aveces se demora en cargar un poco las tablas
-
+A veces, las tablas pueden tardar un poco en cargar y puede haber un exceso de espacio en la parte inferior. Esto se debe a que el componente toma el tamaño del ítem con la mayor altura en la interfaz.
