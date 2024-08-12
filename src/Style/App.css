@@ -1,6 +1,8 @@
 /* background: -webkit-linear-gradient(90deg, #6462df,#453d6c,#343736);
 background: linear-gradient(90deg, #6462df,#453d6c,#343736); */                                             
-
+*{
+  font-family: "Anek Devanagari", sans-serif;
+}
 body {
   padding-top: 1%;
   background: -webkit-linear-gradient(90deg, #c6c9d7,#7c9b95,#496383);
@@ -25,11 +27,11 @@ input {
   transition: 0.25s;
   display: flex;
   justify-content: center;
-  border-right: solid 1px black;
-  border-bottom: solid 1px black;
+  border-right: solid 5px black;
+  border-bottom: solid 5px black;
   border-radius: 5%;
   margin-left: 5%;
-
+  font-weight: 100px;
 }
 input:checked + label .tab-name {
   background: #496383;

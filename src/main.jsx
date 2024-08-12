@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import Error from './Screens/Error.jsx' 
-import './index.css'
 import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from "react-router-dom";
 
 createRoot(document.getElementById('root')).render
